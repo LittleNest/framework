@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/show_top"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/top_color">
+        <TextView
+            android:id="@+id/toptitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="标题"
+            android:textSize="24sp"
+            android:textColor="@color/common_bg"
+           />
+
+        <ImageButton
+            android:id="@+id/btn_discover_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/publish"
+            android:background="#00000000"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/show_topmain"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/top_color">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/search"
+            android:layout_marginTop="14dp"
+            android:layout_toLeftOf="@+id/search_message"
+            android:id="@+id/imageView" />
+       <EditText
+           android:id="@+id/search_message"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerInParent="true"
+           android:text="输入搜索内容"
+           android:textColor="@color/common_bg"
+           android:textSize="18sp"/>
+        <ImageButton
+            android:id="@+id/btn_fenlei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fenlei"
+            android:background="#00000000"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp" />
+
+        <ImageButton
+            android:id="@+id/btn_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/position"
+            android:background="#00000000"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"/>
+
+
+        <View
+            android:id="@+id/seach_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="130dp"
+            android:layout_marginTop="45dp"
+            android:background="@color/common_bg"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/show_layout"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/menu_line" >
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/menu_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/main_bottom"
+        android:background="@color/line"
+        />
+
+
+    <!-- 下面是线性布局，每个里面是相对布局，每个相对布局中是按钮和文字 -->
+    <LinearLayout
+        android:id="@+id/main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/btn_container_main_page"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+
+
+            <Button
+                android:id="@+id/btn_main_page"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bottom_item_bg"
+                android:drawableTop="@drawable/main_page_bg"
+                android:onClick="onTabClicked"
+                android:paddingBottom="2dip"
+                android:paddingTop="7dip"
+                android:text="@string/mainpage"
+
+                android:textColor="@color/main_button_text_color"
+                android:textSize="12sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_container_discover_main"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/btn_discover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bottom_item_bg"
+                android:drawableTop="@drawable/discover_bg"
+                android:onClick="onTabClicked"
+                android:paddingBottom="2dip"
+                android:paddingTop="7dip"
+                android:text="@string/discover"
+                android:textColor="@color/main_button_text_color"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/btn_container_message_page"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/btn_message_cart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bottom_item_bg"
+                android:drawableTop="@drawable/message_bg"
+                android:onClick="onTabClicked"
+                android:paddingBottom="2dip"
+                android:paddingTop="7dip"
+                android:text="@string/message"
+                android:textColor="@color/main_button_text_color"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_container_person_center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+            <!--  android:paddingTop="7dip" -->
+            <Button
+                android:id="@+id/btn_person_center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bottom_item_bg"
+                android:drawableTop="@drawable/person_center_bg"
+                android:onClick="onTabClicked"
+                android:paddingBottom="2dip"
+                android:paddingTop="7dip"
+
+                android:text="@string/my"
+                android:textColor="@color/main_button_text_color"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!-- 上面的布局方式 -->
+    <RelativeLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:layout_above="@id/main_bottom" >
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
